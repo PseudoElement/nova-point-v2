@@ -17,7 +17,7 @@ Once the verification is successful, zkLink will start distributing Nova points 
 
 ## Points
 
-### Briefly Formulas:
+### General Formulas:
 
 $$
 Points = Group Booster (Ecosystem Points + Asset Points) + Referral Points + Bonus Points
@@ -30,28 +30,24 @@ Ecosystem Points = Vol{\text{\scriptsize u,t}} Points + TVL_{\text{\scriptsize u
 $$
 
 1. Vol<sub>u,t</sub>,
-   Vol signifies the total volume of trades (in ETH) executed by a user over a period of time.
-
-   $$ VolPoints\_{\text{\scriptsize u,t}} = Booster · 1/1000 · Price · Quantity $$
-
-   - Spot DEX, Spot PERPs, Lending, Bridge:
-     The total trading/lending/bridging volume by the user based on the formula above.
-   - GameFi, NFTFi, SocialFi:
+   Vol signifies the total volume of trades (in USD) executed by a user over a period of time.
+   - DEX, Perpetuals, Lending, Bridge:
+     The total trading, lending and/or bridging volume of the users based on the formula above.
+   - Game-fi, NFT-fi, Social-fi:
      The total trading volume of assets such as NFT and FT.  
-      The total spending in the game economy (eg. tokens spent in gameFi, in-game asset trading etc)
-     In this sense, the total trading volume can signify total transaction volume in gameFi. - To prevent sybil attack, a multiplier of 1/x where x = 1000, 2000,..., N is used for each specific protocol. The multiplier is incorporated into the constant b.
+      The total spending in the game economy (eg. tokens spent in game-fi, in-game asset trading etc)
 
 2. TVL<sub>u,t</sub> (Total Locked Value):
-   Total value of liquidity provided to DEX pools or PERPs or Lending , The TVL refers to the total value of different tokens owned by each user in a specific period of time.
+   Total value of liquidity provided to the DEX pools or perpetuals or lending , The TVL refers to the total value of different tokens owned by each user in a specific period of time.
 
    These tokens are not sTokens or lTokens; rather, they represent the quantity of underlying tokens corresponding to these collateral certificates in the pool.
 
    For example, if two users, A and B, each stake 20 ETH in a protocol pool and receive 20 lpETH, then the pool locks 40 ETH of underlying tokens. When user C borrows 20 ETH, the underlying token balance for users A and B in the protocol is each 10 ETH. The calculation formula is: `TVL_u =20 lpETH / 40 lpETH * 20 ETH`.
 
 3. TxNum<sub>u,t</sub> signifies the total number of transactions
-   - For Dex/Perps/Lending protocol, tx volume should be grater than 0.1 ETH or 500 USDC/USDT.
-   - For Bridge, it should be Number of bridged transactions.
-   - For GameFi/NFTFi, it is the total number of on-chain interactions in the protocol.
+   - For DEX, perpetuals and lending, transaction volume should be grater than 0.1 ETH or 500 USDC/USDT.
+   - For bridge, it should be number of bridged transactions.
+   - For Game-fi/NFT-fi, it is the total number of on-chain transactions in the protocol.
 
 ## Getting Started
 
@@ -111,6 +107,7 @@ Capture a snapshot every 8 hours at 02:00 UTC, 10:00 UTC, and 18:00 UTC of the T
 | tokenAddress | 0x2F8A25ac62179B31D62D7F80884AE57464699059                                  |
 | poolAddress  | Each pool’s contract address eg: 0xE8a8f1D76625B03b787F6ED17bD746e0515F3aEf |
 | volume       | Transaction volume, eg 2300 USD                                             |
+| lpLabel      | on-chain identification of LP (tbd)                                         |
 
 #### TVL
 
